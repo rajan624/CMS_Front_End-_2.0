@@ -2,7 +2,9 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import { Avatar } from "@nextui-org/react";
 import ImageAnimatePresenceStyle from "../../styles/ModuleCSS/Dashboard/ImageAnimatePresence.module.css";
+import { StarIcon, RightArrowIcon, LeftArrowIcon } from "../../Util/Icons";
 
 const variants = {
   enter: (direction) => {
@@ -46,10 +48,13 @@ const ImageAnimatePresence = () => {
     <motion.div className={ImageAnimatePresenceStyle.mainDiv}>
       <motion.div
         onClick={() => paginate(-1)}
-        className={ImageAnimatePresenceStyle.buttonNextPrev}
+        className={`${ImageAnimatePresenceStyle.buttonNextPrev} ${ImageAnimatePresenceStyle.leftRightIcon}`}
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      ></motion.div>
+      >
+        {" "}
+        <RightArrowIcon className={ImageAnimatePresenceStyle.leftRightIcon} />
+      </motion.div>
       <AnimatePresence initial={false} custom={direction}>
         <div className={ImageAnimatePresenceStyle.imageSideDiv}>
           <motion.div
@@ -83,20 +88,48 @@ const ImageAnimatePresence = () => {
                 paginate(-1);
               }
             }}
-          ></motion.div>
-          <div className={ImageAnimatePresenceStyle.sideDiv} >
-            <p className={ImageAnimatePresenceStyle.sideDivPara} >
-                September 09 &#8226; 02 mins read
+          >
+            <div className={ImageAnimatePresenceStyle.imageInDiv}>
+              <div className={ImageAnimatePresenceStyle.imageInDiv1}>
+                <div className={ImageAnimatePresenceStyle.imageInDiv11}>
+                  <StarIcon />
+                </div>
+                <div className={ImageAnimatePresenceStyle.imageInDiv12}>
+                  <h5>Technology</h5>
+                </div>
+              </div>
+              <div className={ImageAnimatePresenceStyle.imageInDiv2}>
+                <h3 className={ImageAnimatePresenceStyle.imageInDiv2H3}>
+                  A Transformative Journey
+                </h3>
+                <div className={ImageAnimatePresenceStyle.imageInDiv2Div}>
+                  <Avatar
+                    isBordered
+                    color="secondary"
+                    radius="lg"
+                    src="https://i.pravatar.cc/150?u=a04258114e29026302d"
+                  />
+                  <h5>Jason Williams</h5>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          <div className={ImageAnimatePresenceStyle.sideDiv}>
+            <p className={ImageAnimatePresenceStyle.sideDivPara}>
+              September 09 &#8226; 02 mins read
             </p>
           </div>
         </div>
       </AnimatePresence>
       <motion.div
         onClick={() => paginate(1)}
-        className={ImageAnimatePresenceStyle.buttonNextPrev}
+        className={`${ImageAnimatePresenceStyle.buttonNextPrev} ${ImageAnimatePresenceStyle.leftRightIcon}`}
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      ></motion.div>
+      >
+        {" "}
+        <LeftArrowIcon className={ImageAnimatePresenceStyle.leftRightIcon} />
+      </motion.div>
     </motion.div>
   );
 };
