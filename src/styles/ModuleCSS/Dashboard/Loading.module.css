@@ -1,0 +1,52 @@
+@keyframes widthChange {
+    0% {
+      width: 100px;
+    }
+    50% {
+      width: 175px;
+    }
+  }
+.mainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logoDiv{
+    width: 100px;
+    animation: widthChange 4s infinite; 
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover entire viewport width */
+    height: 100vh; /* Cover entire viewport height */
+    /* background: #0c1326; */
+    /* background: wheat; */
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  
+  .upperPart {
+    margin-bottom: 20px;
+  }
+  
+  .lowerPart button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
